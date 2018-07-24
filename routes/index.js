@@ -1,10 +1,19 @@
 const express = require('express');
 
-const router = express.Router();
 
-/* GET home page. */
-router.get('/', (req, res) => {
-  res.send('API working');
-});
+const routes = (app) => {
+  const router = express.Router();
 
-module.exports = router;
+  router.get('/', (req, res) => {
+    res.json({
+      success: true,
+      message: 'Api Working',
+    });
+  });
+
+
+  app.use('/api', router);
+};
+
+
+module.exports = routes;
