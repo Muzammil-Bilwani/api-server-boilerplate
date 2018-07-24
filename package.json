@@ -1,0 +1,31 @@
+{
+  "name": "api-boiler-plate",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "pm2-runtime start ./bin/www.js",
+    "lint": "eslint --fix ./",
+    "debug": "nodemon ./bin/www",
+    "test": "snyk test"
+  },
+  "dependencies": {
+    "ascii-art": "^1.4.3",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "helmet": "^3.13.0",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
+    "tracer": "^0.8.15"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "snyk": "^1.80.0"
+  }
+}

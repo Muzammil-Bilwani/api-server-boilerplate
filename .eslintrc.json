@@ -1,0 +1,40 @@
+{
+    
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": "airbnb",
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "no-var": [
+            "error"
+        ],
+        "no-tabs": 0,
+        "no-underscore-dangle": "off",
+        "consistent-return": "off",
+        "no-param-reassign": [
+            "error",
+            {
+                "props": false
+            }
+        ],
+        "prefer-destructuring": "off",
+        "linebreak-style": "off"
+    }
+}
