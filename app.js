@@ -7,12 +7,12 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 const serverMessages = require('./utils/server-responses');
+const database = require('./database/connection');
 
 const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+
+database.connect();
 
 // uncomment after placing your favicon in /public
 
