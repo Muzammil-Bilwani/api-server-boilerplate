@@ -1,5 +1,5 @@
 const express = require('express');
-
+const users =  require('../features/users/user.routes');
 
 const routes = (app) => {
   const router = express.Router();
@@ -10,7 +10,7 @@ const routes = (app) => {
       message: 'Api Working',
     });
   });
-
+  router.use('/users', users);
 
   app.use('/api', router);
 };

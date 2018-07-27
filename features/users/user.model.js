@@ -1,34 +1,18 @@
-const mongoose = require('mongoose');
+// All the functions related to db goes here
+const User = require('./user.schema');
 
-const Schema = mongoose.Schema;
+const userDb = {}
 
+userDb.getAllUsers = async () => {
+    return User.find({}, { password: 0 });
+};
 
-const User = new Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: String,
-  name: {
-    type: String,
-    default: '',
-  },
-  admin: {
-    type: Boolean,
-    default: false,
-  },
-  resetToken: {
-    type: String,
-    default: '',
-  },
-  active: {
-    type: Boolean,
-    default: true,
-  },
-}, {
-  timestamps: true,
-});
+userDb.findUser = async (params) => {
+    return User.findOne(params).lean();
+}
 
+userDb.createUser  =async(params) => {
+    return User.create(params);
+}
 
-module.exports = mongoose.model('User', User);
+module.exports = userDb;
