@@ -17,7 +17,6 @@ authOperations.verifyUser = async (req, res, next) => {
         return serverResponse.sendError(res, messages.AUTHENTICATION_FAILED);
     }
     jwt.verify(token, config.secretKey, (error, decoded) => {
-        console.log('Decoded : ', decoded);
         if (error) return serverResponse.sendError(res, messages.BAD_REQUEST);
         req._user = decoded;
         next();

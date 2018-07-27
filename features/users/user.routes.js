@@ -3,12 +3,13 @@ const router = express.Router();
 
 const catcher = require('../../handlers/err-handlers');
 const authCtrl = require('../auth/auth.ctrl');
-const userCtrl = require('./user.ctrl');
+const initiateCtrl = require('./controller/user.initiate');
+const userCrud = require('./controller/user.crud');
 
-router.get('/', catcher(authCtrl.verifyUser), catcher(userCtrl.getAllUsers));
+router.get('/', catcher(authCtrl.verifyUser), catcher(userCrud.getAllUsers));
 
-router.post('/login', catcher(userCtrl.login));
+router.post('/login', catcher(initiateCtrl.login));
 
-router.post('/signup', catcher(userCtrl.signUp));
+router.post('/signup', catcher(initiateCtrl.signUp));
 
 module.exports = router;
