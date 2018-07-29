@@ -8,6 +8,6 @@ const asyncErrorCatcher = (fn) => {
     if (!promise || !promise.catch) return;
     promise.catch(err => next(err));
   };
-}
+};
 
 module.exports = asyncErrorCatcher;

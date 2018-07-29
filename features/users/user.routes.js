@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 const catcher = require('../../handlers/err-handlers');
@@ -11,5 +12,7 @@ router.get('/', catcher(authCtrl.verifyUser), catcher(userCrud.getAllUsers));
 router.post('/login', catcher(initiateCtrl.login));
 
 router.post('/signup', catcher(initiateCtrl.signUp));
+
+router.get('/me', catcher(authCtrl.verifyUser), catcher(initiateCtrl.verifyMe));
 
 module.exports = router;
