@@ -23,4 +23,9 @@ authOperations.verifyUser = async (req, res, next) => {
   });
 };
 
+authOperations.unseal = async (req, res, next) => {
+  req._user = await Iron.unseal(req._user, config.sealPass, Iron.defaults);
+  next();
+};
+
 module.exports = authOperations;

@@ -13,6 +13,6 @@ router.post('/login', catcher(initiateCtrl.login));
 
 router.post('/signup', catcher(initiateCtrl.signUp));
 
-router.get('/me', catcher(authCtrl.verifyUser), catcher(initiateCtrl.verifyMe));
+router.get('/me', catcher(authCtrl.verifyUser), catcher(authCtrl.unseal), catcher(initiateCtrl.verifyMe));
 
 module.exports = router;

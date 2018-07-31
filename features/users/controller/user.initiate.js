@@ -35,7 +35,9 @@ initiate.signUp = async (req, res) => {
 };
 
 initiate.verifyMe = async (req, res) =>
-  serverResponse.sendSuccess(res, messages.SUCCESSFUL);
+  serverResponse.sendSuccess(res, messages.SUCCESSFUL, {
+    user: req._user,
+  });
 
 
 module.exports = initiate;
