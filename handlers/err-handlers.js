@@ -1,4 +1,4 @@
-exports.asyncErrorCatcher = (fn) => {
+const asyncErrorCatcher = (fn) => {
   if (!(fn instanceof Function)) {
     throw new Error('Must supply a function');
   }
@@ -9,3 +9,5 @@ exports.asyncErrorCatcher = (fn) => {
     promise.catch(err => next(err));
   };
 };
+
+module.exports = asyncErrorCatcher;
