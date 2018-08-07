@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const catcher = require('../../handlers/err-handlers');
+const catcher = require('@handlers/err-handlers');
 const authCtrl = require('../auth/auth.ctrl');
 const initiateCtrl = require('./controller/user.initiate');
 const userCrud = require('./controller/user.crud');

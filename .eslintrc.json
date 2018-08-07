@@ -1,5 +1,4 @@
 {
-    
     "env": {
         "es6": true,
         "node": true
@@ -35,6 +34,7 @@
             }
         ],
         "prefer-destructuring": "off",
-        "linebreak-style": "off"
+        "linebreak-style": "off",
+        "import/no-unresolved": "off"
     }
 }

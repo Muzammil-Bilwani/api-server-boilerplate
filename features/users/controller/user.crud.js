@@ -1,6 +1,6 @@
 const UserDB = require('../user.model');
-const messages = require('../../../config/messages');
-const serverResponse = require('../../../utils/server-responses');
+const messages = require('@config/messages');
+const serverResponse = require('@utils/server-responses');
 
 const user = {};
 
