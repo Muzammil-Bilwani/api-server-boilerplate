@@ -1,8 +1,8 @@
-const messages = require('../../config/messages');
+const messages = require('@config/messages');
 const jwt = require('jsonwebtoken');
 const Iron = require('iron');
-const serverResponse = require('../../utils/server-responses');
-const config = require('../../config/config');
+const serverResponse = require('@utils/server-responses');
+const config = require('@config/config');
 
 const authOperations = {};
 

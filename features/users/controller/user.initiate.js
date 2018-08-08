@@ -1,9 +1,9 @@
 const passwordHash = require('password-hash');
 const UserDB = require('../user.model');
 const auth = require('../../auth/auth.ctrl');
-const messages = require('../../../config/messages');
-const serverResponse = require('../../../utils/server-responses');
-const log = require('../../../utils/logger');
+const messages = require('@config/messages');
+const serverResponse = require('@utils/server-responses');
+const log = require('@utils/logger');
 
 const initiate = {};
 
