@@ -12,6 +12,10 @@
 For Mongo 
 Switch to branch **mongo** 
 
+For SQL
+Switch to branch **sequlize** 
+
+
 Thanks.
 For any 
 
