@@ -1,5 +1,20 @@
 const express = require('express');
-const users = require('../features/users/user.routes');
+const fs = require('fs');
+
+const features = fs.readdirSync('features');
+const imports = [];
+const filteredFeatures = [];
+
+features.forEach((feature) => {
+  const dir = fs.readdirSync(`features/${feature}`);
+
+  dir.forEach((e) => {
+    if (e.includes('routes')) {
+      filteredFeatures.push(feature);
+      imports.push(require(`@features/${feature}/${e}`));
+    }
+  });
+});
 
 const routes = (app) => {
   const router = express.Router();
@@ -10,8 +25,10 @@ const routes = (app) => {
       message: 'Api Working',
     });
   });
-  router.use('/users', users);
 
+  for (let i = 0, f = 0; i < imports.length && f < filteredFeatures.length; i += 1, f += 1) {
+    router.use(`/${filteredFeatures[f]}`, imports[i]);
+  }
   app.use('/api', router);
 };
 
