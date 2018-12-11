@@ -35,6 +35,8 @@
         ],
         "prefer-destructuring": "off",
         "linebreak-style": "off",
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        "global-require": "off",
+        "import/no-dynamic-require": "off"
     }
 }

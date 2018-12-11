@@ -6,7 +6,8 @@ const paths = [
   'handlers',
   'utils',
   'config',
-  'database'];
+  'database',
+  'features'];
 
 const initialization = () => {
   paths.forEach((element) => {
