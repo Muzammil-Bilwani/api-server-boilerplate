@@ -16,6 +16,7 @@ const log = require('../utils/logger');
  * Get port from environment and store in Express.
  */
 
+// eslint-disable-next-line no-use-before-define
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -33,6 +34,7 @@ const server = http.createServer(app);
 function normalizePort(val) {
   const normalizedPort = parseInt(val, 10);
 
+  // eslint-disable-next-line no-restricted-globals
   if (isNaN(normalizedPort)) {
     // named pipe
     return val;
@@ -61,16 +63,16 @@ function onError(error) {
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case 'EACCES':
-      console.error(`${bind} requires elevated privileges`);
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(`${bind} is already in use`);
-      process.exit(1);
-      break;
-    default:
-      throw error;
+  case 'EACCES':
+    console.error(`${bind} requires elevated privileges`);
+    process.exit(1);
+    break;
+  case 'EADDRINUSE':
+    console.error(`${bind} is already in use`);
+    process.exit(1);
+    break;
+  default:
+    throw error;
   }
 }
 

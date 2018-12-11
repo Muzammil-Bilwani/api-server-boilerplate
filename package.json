@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pm2-runtime start ./bin/www.js",
+    "start": "node ./bin/www.js",
     "lint": "eslint --fix ./",
     "debug": "nodemon ./bin/www",
-    "test": "snyk test"
+    "test": "snyk test",
+    "deploy": "forever stopall && forever start ./bin/www"
   },
   "dependencies": {
     "ascii-art": "^1.4.3",
