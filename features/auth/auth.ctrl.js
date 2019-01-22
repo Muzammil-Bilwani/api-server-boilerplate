@@ -1,8 +1,8 @@
-const messages = require('../../config/messages');
+const messages = require('@config/messages');
 const jwt = require('jsonwebtoken');
 const Iron = require('iron');
-const serverResponse = require('../../utils/server-responses');
-const config = require('../../config/config');
+const serverResponse = require('@utils/server-responses');
+const config = require('@config/config');
 
 const authOperations = {};
 
@@ -21,6 +21,11 @@ authOperations.verifyUser = async (req, res, next) => {
     req._user = decoded;
     next();
   });
+};
+
+authOperations.unseal = async (req, res, next) => {
+  req._user = await Iron.unseal(req._user, config.sealPass, Iron.defaults);
+  next();
 };
 
 module.exports = authOperations;

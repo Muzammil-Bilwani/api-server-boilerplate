@@ -1,5 +1,5 @@
 const serverResponse = {
-  sendSuccess: (res, message, data) => {
+  sendSuccess: (res, message, data = null) => {
     const responseMessage = {
       code: message.code ? message.code : 500,
       success: message.success,

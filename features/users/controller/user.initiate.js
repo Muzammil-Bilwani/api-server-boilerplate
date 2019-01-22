@@ -1,8 +1,9 @@
 const passwordHash = require('password-hash');
 const UserDB = require('../user.model');
 const auth = require('../../auth/auth.ctrl');
-const messages = require('../../../config/messages');
-const serverResponse = require('../../../utils/server-responses');
+const messages = require('@config/messages');
+const serverResponse = require('@utils/server-responses');
+const log = require('@utils/logger');
 
 const initiate = {};
 
@@ -28,8 +29,15 @@ initiate.signUp = async (req, res) => {
     password: passwordHash.generate(req.body.password),
     fullname: req.body.fullname,
   };
-  await UserDB.createUser(params);
+  const newUser = await UserDB.createUser(params);
+  log(newUser);
   return serverResponse.sendSuccess(res, messages.SUCCESSFUL_CREATE);
 };
+
+initiate.verifyMe = async (req, res) =>
+  serverResponse.sendSuccess(res, messages.SUCCESSFUL, {
+    user: req._user,
+  });
+
 
 module.exports = initiate;
