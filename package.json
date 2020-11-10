@@ -22,7 +22,7 @@
     "joi": "^13.4.0",
     "jsonwebtoken": "^8.3.0",
     "module-alias": "^2.1.0",
-    "mongoose": "^5.2.5",
+    "mongoose": "^5.7.5",
     "morgan": "~1.9.0",
     "password-hash": "^1.2.2",
     "pug": "2.0.0-beta11",
